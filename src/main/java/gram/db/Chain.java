@@ -143,9 +143,14 @@ public class Chain {
     }
 
     public Node[] traverseAndReturnLevelNodes(int level){
-        return this.traverseAndReturnLevelNodes( level, null );
+        return this.traverseAndReturnLevelNodes(level, null);
     }
 
+    /**
+     * TODO:
+     * Add patching logic
+     * @return
+     */
     public String generatePatch() {
         String patch = "";
 
