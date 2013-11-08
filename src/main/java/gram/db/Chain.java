@@ -149,6 +149,10 @@ public class Chain {
     /**
      * TODO:
      * Add patching logic
+     *
+     * DIFFLINE := <DIFFERENT>(STARTCOMMON,ENDCOMMON) [ DIFFLINE ]
+     *
+     *
      * @return
      */
     public String generatePatch() {
