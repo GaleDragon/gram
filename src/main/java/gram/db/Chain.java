@@ -125,8 +125,26 @@ public class Chain {
         return this.root;
     }
 
+    private Node[] traverseAndReturnLevelNodes( int level, Node root ){
+        if (level == 0){
+            Node[] n = new Node[1];
+            n[0] = root;
+            return n;
+        }
 
+        if (level == 1 && root.isCommon()){
+            Node[] ns = new Node[2];
+            ns[0] = root.getLeft();
+            ns[1] = root.getRight();
+            return ns;
+        }
 
+        return this.traverseAndReturnLevelNodes( level-1, root.getPast() );
+    }
+
+    public Node[] traverseAndReturnLevelNodes(int level){
+        return this.traverseAndReturnLevelNodes( level, null );
+    }
 
     public String generatePatch() {
         String patch = "";

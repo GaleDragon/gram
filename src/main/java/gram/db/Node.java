@@ -54,5 +54,21 @@ public class Node {
         this.right = right;
     }
 
-
+    public Node getPast() {
+        if ( this.getRight() == null ) {
+            if (this.getLeft() == null){
+                return null;
+            } else {
+                return this.getLeft();
+            }
+        } else if ( this.getLeft() == null ) {
+            if (this.getRight() == null){
+                return null;
+            } else {
+                return this.getRight();
+            }
+        } else {
+            return this.getLeft();
+        }
+    }
 }
